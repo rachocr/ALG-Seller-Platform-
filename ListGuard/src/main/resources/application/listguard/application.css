@@ -1,0 +1,180 @@
+#background {
+    -fx-background-color: #FFF;
+}
+
+#updateButtonTrack, #loginButton, #refreshButton, #trackButton, #editproductButton, #product_createButton, #product_updateButton, #seemoreButton, #settings_uploadButton, #settings_updateButton {
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-background-color: #E99104;
+    -fx-border-color: #E99104;
+}
+
+#signupButton {
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;  /* Specify the border width separately */
+    -fx-border-color: #E99104;  /* Specify the border color */
+    -fx-background-color: transparent;
+}
+
+#helpPane {
+    -fx-background-color: #E99104;
+    -fx-background-radius: 10px;
+    -fx-border-color: #E99104;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+}
+
+#communityPane, #ordersPane, #returnrefundPane, #accountissuePane, #businesshelpPane, #paymentPane, #guidesPane, #faqPane{
+    -fx-background-color: lightgray;
+    -fx-background-radius: 10px;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-transition: background-color 0.5s;
+}
+
+#chatsupportButton {
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;  /* Specify the border width separately */
+    -fx-border-color: black;  /* Specify the border color */
+    -fx-background-color: transparent;
+}
+
+#removeproductButton, #settings_deleteButton{
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-background-color: #E90404;
+    -fx-border-color: #E90404;
+}
+
+#createproductButton{
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-background-color: #E99104;
+    -fx-border-color: #E99104;
+    -fx-text-fill: white;
+}
+
+#passwordTF {
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #000;
+    -fx-background: transparent;
+}
+
+#emailTF {
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #000;
+    -fx-background: transparent;
+}
+
+#createProductPane{
+    -fx-background-color: lightgray;
+    -fx-background-radius: 10px; /* Add this line */
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgray;
+    -fx-transition: background-color 0.5s;
+}
+
+#sidebarPanel {
+    -fx-background-color: #DADADA; /* Use -fx-background-color instead of -fx-background */
+}
+
+#navbarPanel {
+    -fx-background-color: #456; /* Use -fx-background-color instead of -fx-background */
+}
+
+#overviewButton, #productsButton, #ordersButton, #notificationsButton, #helpcenterButton, #settingsButton, #logoutButton, #help_communityButton, #help_ordersButton, #help_returnrefundButton, #help_accountissuesButton, #help_businesshelpButton, #help_paymentButton, #help_guidesButton, #help_faqButton{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+#dashboard_email{
+    -fx-text-fill: rgba(0, 0, 0, 0.50);
+}
+
+#overviewPane1, #overviewPane2, #overviewPane3, #trackorderPane, #listorderPane{
+     -fx-background-color: transparent;
+     -fx-background-radius: 7px;
+     -fx-border-color: black;
+     -fx-border-radius: 7px;
+     -fx-border-width: 1px;
+     -fx-transition: background-color 0.5s;
+}
+.table-view{
+    -fx-background-color: transparent;
+    -fx-background-radius: 7px;
+    -fx-border-color: black;
+    -fx-border-radius: 7px;
+    -fx-border-width: 1px;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-border-color: transparent transparent #000000 transparent;
+    -fx-font-family: Poppins;
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+}
+
+.table-view .column-header{
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background .label{
+    -fx-text-fill: black;
+}
+
+.table-row-cell {
+    -fx-text-fill: black;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: lightgray;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: black;
+    -fx-font-family: "Poppins";
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+    -fx-alignment: center;
+}
+
+.edit-button, .order-button, .track-button {
+    -fx-text-fill: #4CAF50;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-font-family: "Poppins Medium";
+    -fx-border-color: #4CAF50;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.view-button {
+    -fx-text-fill: #E99104;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #E99104;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.remove-button, .update-button {
+    -fx-text-fill: #f44336;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-border-color: #f44336;
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+

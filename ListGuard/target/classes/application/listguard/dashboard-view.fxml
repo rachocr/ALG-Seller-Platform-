@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.listguard.DashboardController">
+   <children>
+      <AnchorPane prefHeight="1003.0" prefWidth="350.0" style="-fx-background-color: white;">
+         <children>
+            <VBox layoutX="25.0" layoutY="420.0" prefHeight="193.0" prefWidth="30.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/material-symbols_help-outline.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/solar_settings-outline.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/mdi_logout.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox layoutX="55.0" layoutY="415.0" prefHeight="193.0" prefWidth="263.0" spacing="18.0" stylesheets="@application.css">
+               <children>
+                  <Button fx:id="helpcenterButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToHelpCenter" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Help Center">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="settingsButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Settings">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="logoutButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#logout" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Log out">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+            <Label id="dashboard_email" fx:id="store_email" layoutX="99.0" layoutY="833.0" onMouseClicked="#switchToSettings" text="storeowner@gmail.com" textFill="#00000080">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label id="dashboard_name" fx:id="store_name" layoutX="99.0" layoutY="805.0" onMouseClicked="#switchToSettings" text="Store Owner">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Circle fx:id="profile_picture" fill="DODGERBLUE" layoutX="55.0" layoutY="830.0" onMouseClicked="#switchToSettings" radius="30.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <ImageView fitHeight="5.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" x="25.0" y="120.0">
+               <image>
+                  <Image url="@../../assets/Line.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="5.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" x="25.0" y="390.0">
+               <image>
+                  <Image url="@../../assets/Line.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="163.0" fitWidth="317.0" layoutX="30.0" layoutY="-19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../assets/Logo%20Black.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="25.0" layoutY="149.0" prefHeight="262.0" prefWidth="30.0" spacing="30.0">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/entypo_bar-graph.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/gridicons_product.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/icon-park-outline_transaction-order.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/mingcute_notification-line.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox layoutX="55.0" layoutY="146.0" prefHeight="193.0" prefWidth="263.0" spacing="15.0" stylesheets="@application.css">
+               <children>
+                  <Button fx:id="overviewButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToOverview" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Overview">
+                     <font>
+                        <Font name="Poppins Medium" size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="productsButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToProducts" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Products">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="ordersButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToOrders" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Orders">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="notificationsButton" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToNotifications" prefHeight="35.0" prefWidth="263.0" stylesheets="@application.css" text="Notifications">
+                     <font>
+                        <Font name="Poppins Medium" size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <TabPane fx:id="tabPane" layoutX="350.0" layoutY="-33.0" prefHeight="1036.0" prefWidth="1250.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="overviewTab" text="Overview">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="70.0" layoutY="120.0" text="Overview">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="overviewPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Overview">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane fx:id="overviewPane1" layoutX="70.0" layoutY="221.0" prefHeight="280.0" prefWidth="546.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="24.0" layoutY="20.0" text="Total Sales">
+                                 <font>
+                                    <Font name="Poppins Medium" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="24.0" layoutY="55.0" text="Products have been sold" textFill="#7c7c7c">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <AreaChart fx:id="totalsalesChart" layoutX="25.0" layoutY="85.0" prefHeight="167.0" prefWidth="500.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="overviewPane2" layoutX="633.0" layoutY="221.0" prefHeight="280.0" prefWidth="546.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="24.0" layoutY="20.0" text="Balance">
+                                 <font>
+                                    <Font name="Poppins Medium" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="24.0" layoutY="55.0" text="Amount of income and results" textFill="#7c7c7c">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <AreaChart fx:id="balanceChart" layoutX="25.0" layoutY="85.0" prefHeight="167.0" prefWidth="500.0">
+                                 <xAxis>
+                                    <CategoryAxis side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="overviewPane3" layoutX="70.0" layoutY="516.0" prefHeight="343.0" prefWidth="1109.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="24.0" layoutY="20.0" text="Newest Product">
+                                 <font>
+                                    <Font name="Poppins Medium" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="24.0" layoutY="55.0" text="Newest Product list" textFill="#7c7c7c">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tableOverview" layoutX="25.0" layoutY="84.0" prefHeight="233.0" prefWidth="1053.0" stylesheets="@application.css">
+                                 <columns>
+                                    <TableColumn fx:id="colProductNameOverview" prefWidth="75.0" text="PRODUCT" />
+                                    <TableColumn fx:id="colProductCategoryOverview" prefWidth="75.0" text="CATEGORY" />
+                                    <TableColumn fx:id="colProductPriceOverview" prefWidth="75.0" text="PRICE" />
+                                    <TableColumn fx:id="colListingDateOverview" prefWidth="75.0" text="CREATED" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Button fx:id="seemoreButton" layoutX="946.0" layoutY="27.0" mnemonicParsing="false" onAction="#switchToProducts" prefHeight="23.0" prefWidth="131.0" stylesheets="@application.css" text="See More" textFill="WHITE">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="productsTab" text="Products">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="productsPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Products">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Products">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tableProducts" layoutX="70.0" layoutY="220.0" prefHeight="620.0" prefWidth="1111.0" stylesheets="@application.css">
+                           <columns>
+                              <TableColumn fx:id="colListingDate" editable="false" prefWidth="75.0" sortable="false" text="Date of Listing" />
+                              <TableColumn fx:id="colProductName" editable="false" prefWidth="75.0" sortable="false" text="Product Name" />
+                              <TableColumn fx:id="colProductCategory" editable="false" prefWidth="75.0" sortable="false" text="Category" />
+                              <TableColumn fx:id="colProductPrice" editable="false" prefWidth="75.0" sortable="false" text="Price" />
+                              <TableColumn fx:id="colProductQuantity" editable="false" prefWidth="75.0" sortable="false" text="Quantity" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button fx:id="createproductButton" layoutX="1050.0" layoutY="123.0" mnemonicParsing="false" onAction="#switchToCreateProduct" prefHeight="45.0" prefWidth="131.0" stylesheets="@application.css" text="Create" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="ordersTab" text="Orders">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="ordersPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Orders">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Orders">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableOrders" layoutX="70.0" layoutY="220.0" prefHeight="620.0" prefWidth="1111.0" stylesheets="@application.css">
+                           <columns>
+                              <TableColumn fx:id="colOrderNo" prefWidth="75.0" sortable="false" text="Order No." />
+                              <TableColumn fx:id="colProductNameOrder" prefWidth="75.0" sortable="false" text="Product Name" />
+                              <TableColumn fx:id="colProductCategoryOrder" prefWidth="75.0" sortable="false" text="Category" />
+                              <TableColumn fx:id="colListingDateOrder" prefWidth="75.0" sortable="false" text="Date" />
+                              <TableColumn fx:id="colProductQuantityOrder" prefWidth="75.0" sortable="false" text="Quantity" />
+                              <TableColumn fx:id="colProductPriceOrder" prefWidth="75.0" sortable="false" text="Price" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="notificationsTab" text="Notifications">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="notificationsPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Notifications">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Notifications">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <TextField layoutX="935.0" layoutY="124.0" prefHeight="45.0" prefWidth="243.0" promptText="Search">
+                           <font>
+                              <Font name="Poppins Regular" size="18.0" />
+                           </font>
+                        </TextField>
+                        <TableView layoutX="70.0" layoutY="220.0" prefHeight="620.0" prefWidth="1111.0" stylesheets="@application.css">
+                           <columns>
+                              <TableColumn prefWidth="700.3333435058594" text="List Notification" />
+                              <TableColumn prefWidth="193.66665649414062" text="Date" />
+                              <TableColumn prefWidth="215.0" text="Action" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="helpcenterTab" text="Help Center">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="communityPane" layoutX="70.0" layoutY="510.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_communityButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Community">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="52.0" prefHeight="17.0" prefWidth="203.0" text="Share, Discussion, Network">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/iconoir_community.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="70.0" layoutY="70.0" text="Help Center">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Help Center">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane fx:id="helpPane" layoutX="70.0" layoutY="220.0" prefHeight="217.0" prefWidth="1109.0" stylesheets="@application.css">
+                           <children>
+                              <ImageView fitHeight="163.0" fitWidth="1058.0" layoutX="20.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/Help%20Text.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="chatsupportButton" layoutX="20.0" layoutY="136.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" prefHeight="50.0" prefWidth="200.0" text="Chat with support">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="249.0" layoutY="148.0" text="+123 45 67 89 10">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="435.0" layoutY="148.0" text="support@amazonlistguard.com">
+                                 <font>
+                                    <Font name="Poppins Regular" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="70.0" layoutY="450.0" text="How can we help?">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="ordersPane" layoutX="360.0" layoutY="510.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_ordersButton" layoutX="12.0" layoutY="13.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Orders">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Tracking, Delivery">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/material-symbols_orders-outline.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="returnrefundPane" layoutX="645.0" layoutY="511.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_returnrefundButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Return &amp; Refund">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Methods, Process">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/game-icons_return-arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="accountissuePane" layoutX="930.0" layoutY="510.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_accountissuesButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Account Issues">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Profile, Settings, Password">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/material-symbols-light_account-box-outline.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="businesshelpPane" layoutX="70.0" layoutY="700.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_businesshelpButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Business Help">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Dashboard, Reports">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/mdi_help-outline.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="paymentPane" layoutX="360.0" layoutY="700.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_paymentButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Payment">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Methods, VAT, Security">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/fluent_payment-16-regular.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="guidesPane" layoutX="645.0" layoutY="700.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_guidesButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="Guides">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Tutorials, Blogs, Newsletters">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="25.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/arcticons_privacy-guides.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="faqPane" layoutX="930.0" layoutY="700.0" prefHeight="150.0" prefWidth="250.0" stylesheets="@application.css">
+                           <children>
+                              <Button fx:id="help_faqButton" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" text="FAQ">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Label layoutX="25.0" layoutY="50.0" prefHeight="17.0" prefWidth="203.0" text="Help, Articles">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="25.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../assets/icons/mdi_faq.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="settingsTab" text="Settings">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Circle fx:id="settings_profile" fill="DODGERBLUE" layoutX="450.0" layoutY="251.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="70.0" layoutY="70.0" text="Settings">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Settings">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="220.0" text="Profile Picture">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="260.0" text="Accepted files : JPG, PNG, TIFF" textFill="#00000080">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="settings_uploadButton" layoutX="515.0" layoutY="234.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent;" stylesheets="@application.css" text="Upload" textFill="#e99104">
+                           <font>
+                              <Font name="Poppins Medium" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="settings_deleteButton" layoutX="633.0" layoutY="233.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent;" stylesheets="@application.css" text="Delete" textFill="#e90404">
+                           <font>
+                              <Font name="Poppins Medium" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label layoutX="70.0" layoutY="360.0" text="Personal Information">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="400.0" text="Not shown on public profile" textFill="#00000080">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="410.0" layoutY="364.0" text="First Name">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" editable="false" layoutX="410.0" layoutY="401.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="646.0" layoutY="363.0" text="Last Name">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" editable="false" layoutX="646.0" layoutY="400.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="407.0" layoutY="467.0" text="Phone Number">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" editable="false" layoutX="407.0" layoutY="504.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="646.0" layoutY="466.0" text="Store Name">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" editable="false" layoutX="646.0" layoutY="503.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="70.0" layoutY="593.0" text="Personal Information">
+                           <font>
+                              <Font name="Poppins Medium" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="633.0" text="Not shown on public profile" textFill="#00000080">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="407.0" layoutY="599.0" text="New Password">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField accessibleRole="PASSWORD_FIELD" layoutX="407.0" layoutY="636.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="646.0" layoutY="599.0" text="Confirm Password">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField accessibleRole="PASSWORD_FIELD" layoutX="646.0" layoutY="636.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="settings_updateButton" layoutX="873.0" layoutY="636.0" mnemonicParsing="false" onAction="#showUnderDevelopmentDialog" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: transparent;" stylesheets="@application.css" text="Update" textFill="#e99104">
+                           <font>
+                              <Font name="Poppins Medium" size="14.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Label layoutX="407.0" layoutY="699.0" text="Email">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField disable="true" editable="false" layoutX="407.0" layoutY="736.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@application.css">
+                           <font>
+                              <Font name="Poppins Regular" size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="createproductTab" text="Create Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="returnButton" fitHeight="30.0" fitWidth="30.0" layoutX="1.0" layoutY="62.0" onMouseClicked="#switchToProducts" pickOnBounds="true" preserveRatio="true" x="1144.0" y="70.0">
+                           <image>
+                              <Image url="@../../assets/icons/icon-park-outline_return.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="createProductPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Products &gt; Create Product">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Products">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane id="createProductPane" layoutX="70.0" layoutY="220.0" prefHeight="511.0" prefWidth="567.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="25.0" text="General Information">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="59.0" text="Name / Title">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nameTF" layoutX="23.0" layoutY="80.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="115.0" text="Description">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="descriptionTA" layoutX="23.0" layoutY="138.0" prefHeight="177.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="323.0" text="Attributes">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="attributesTF" layoutX="23.0" layoutY="344.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="380.0" text="Tags">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tagsTF" layoutX="22.0" layoutY="397.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="433.0" text="Product Category">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="categoryComboBox" layoutX="21.0" layoutY="458.0" prefHeight="30.0" prefWidth="512.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="createProductPane" layoutX="668.0" layoutY="220.0" prefHeight="261.0" prefWidth="512.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="25.0" text="Stocks &amp; Pricing">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="59.0" text="Stock(s)">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="stocksTF" layoutX="23.0" layoutY="80.0" prefHeight="30.0" prefWidth="465.0" />
+                              <Label layoutX="24.0" layoutY="124.0" text="Base Price">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="basepriceTF" layoutX="24.0" layoutY="145.0" prefHeight="30.0" prefWidth="465.0" />
+                              <Label layoutX="24.0" layoutY="186.0" text="Discount(s)">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="discountsTF" layoutX="24.0" layoutY="207.0" prefHeight="30.0" prefWidth="465.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="product_createButton" layoutX="669.0" layoutY="494.0" mnemonicParsing="false" onAction="#createProduct" prefHeight="45.0" prefWidth="512.0" stylesheets="@application.css" text="Create Product" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Regular" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="editproductTab" text="Edit Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="returnButton1" fitHeight="30.0" fitWidth="30.0" layoutX="1.0" layoutY="62.0" onMouseClicked="#switchToProducts" pickOnBounds="true" preserveRatio="true" x="1144.0" y="70.0">
+                           <image>
+                              <Image url="@../../assets/icons/icon-park-outline_return.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="editProductPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Products &gt; Edit Product">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Products">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane id="createProductPane" layoutX="70.0" layoutY="220.0" prefHeight="511.0" prefWidth="567.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="25.0" text="General Information">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="59.0" text="Name / Title">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nameTFEdit" layoutX="23.0" layoutY="80.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="115.0" text="Description">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="descriptionTAEdit" layoutX="23.0" layoutY="138.0" prefHeight="177.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="323.0" text="Attributes">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tagsTFEdit" layoutX="23.0" layoutY="344.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="380.0" text="Tags">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="attributesTFEdit" layoutX="22.0" layoutY="397.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="433.0" text="Product Category">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="categoryComboBoxEdit" layoutX="21.0" layoutY="458.0" prefHeight="30.0" prefWidth="512.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="createProductPane" layoutX="668.0" layoutY="220.0" prefHeight="261.0" prefWidth="512.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="25.0" text="Stocks &amp; Pricing">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="59.0" text="Stock(s)">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="stocksTFEdit" layoutX="23.0" layoutY="80.0" prefHeight="30.0" prefWidth="465.0" />
+                              <Label layoutX="24.0" layoutY="124.0" text="Base Price">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="basepriceTFEdit" layoutX="24.0" layoutY="145.0" prefHeight="30.0" prefWidth="465.0" />
+                              <Label layoutX="24.0" layoutY="186.0" text="Discount(s)">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="discountsTFEdit" layoutX="24.0" layoutY="207.0" prefHeight="30.0" prefWidth="465.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="product_updateButton" layoutX="669.0" layoutY="494.0" mnemonicParsing="false" onAction="#updateProduct" prefHeight="45.0" prefWidth="512.0" stylesheets="@application.css" text="Update Product" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Regular" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="viewProductTab" text="View Product">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="returnButton11" fitHeight="30.0" fitWidth="30.0" layoutX="1.0" layoutY="62.0" onMouseClicked="#switchToProducts" pickOnBounds="true" preserveRatio="true" x="1144.0" y="70.0">
+                           <image>
+                              <Image url="@../../assets/icons/icon-park-outline_return.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Label fx:id="viewProductPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Products &gt; View Product">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Products">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane id="createProductPane" layoutX="70.0" layoutY="220.0" prefHeight="511.0" prefWidth="567.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="25.0" text="General Information">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="59.0" text="Name / Title">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nameTFView" layoutX="23.0" layoutY="80.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="115.0" text="Description">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextArea fx:id="descriptionTAView" layoutX="23.0" layoutY="138.0" prefHeight="177.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="323.0" text="Attributes">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="tagsTFView" layoutX="23.0" layoutY="344.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="380.0" text="Tags">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="attributesTFView" layoutX="22.0" layoutY="397.0" prefHeight="30.0" prefWidth="512.0" />
+                              <Label layoutX="23.0" layoutY="433.0" text="Product Category">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="categoryComboBoxView" disable="true" layoutX="21.0" layoutY="458.0" prefHeight="30.0" prefWidth="512.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="createProductPane" layoutX="668.0" layoutY="220.0" prefHeight="261.0" prefWidth="512.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="23.0" layoutY="25.0" text="Stocks &amp; Pricing">
+                                 <font>
+                                    <Font name="Poppins Medium" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="23.0" layoutY="59.0" text="Stock(s)">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="stocksTFView" layoutX="23.0" layoutY="80.0" prefHeight="30.0" prefWidth="465.0" />
+                              <Label layoutX="24.0" layoutY="124.0" text="Base Price">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="basepriceTFView" layoutX="24.0" layoutY="145.0" prefHeight="30.0" prefWidth="465.0" />
+                              <Label layoutX="24.0" layoutY="186.0" text="Discount(s)">
+                                 <font>
+                                    <Font name="Poppins Medium" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="discountsTFView" layoutX="24.0" layoutY="207.0" prefHeight="30.0" prefWidth="465.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="trackorderTab" text="Track Order">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="updateButtonTrack" layoutX="1050.0" layoutY="126.0" mnemonicParsing="false" onAction="#updateShipmentStatus" prefHeight="45.0" prefWidth="131.0" stylesheets="@application.css" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Medium" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fx:id="returnButton2" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#switchToOrders" pickOnBounds="true" preserveRatio="true" x="1144.0" y="70.0">
+                           <image>
+                              <Image url="@../../assets/icons/icon-park-outline_return.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <ImageView fitHeight="10.0" fitWidth="1110.0" layoutX="70.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/Long%20Line.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="trackOrderPage" layoutX="70.0" layoutY="70.0" text="Store Name &gt; Orders &gt; Track Order &gt; ORD 000000">
+                           <font>
+                              <Font name="Poppins Medium" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="70.0" layoutY="120.0" text="Track Order">
+                           <font>
+                              <Font name="Poppins Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="trackorderPane" layoutX="70.0" layoutY="220.0" prefHeight="335.0" prefWidth="1109.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="20.0" layoutY="25.0" text="ORDER ID:" textFill="#00000080">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="orderIDLabel" layoutX="20.0" layoutY="58.0" text="ORD 000000">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="98.0" text="Payment Method:" textFill="#00000080">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="130.0" text="Cash">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="176.0" text="Address:" textFill="#00000080">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="addressLabel" layoutX="20.0" layoutY="208.0" text="Manila, Philippines">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane fx:id="pictureTimeline" layoutX="523.0" layoutY="53.0" prefHeight="259.0" prefWidth="551.0" style="-fx-background-color: lightgray;" stylesheets="@application.css">
+                                 <children>
+                                    <ImageView fitHeight="259.0" fitWidth="551.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../assets/Map%20Placeholder.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
+                              <Label layoutX="524.0" layoutY="20.0" text="Timeline:" textFill="#00000080">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="20.0" layoutY="250.0" text="Order Status:" textFill="#00000080">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="statusLabel" layoutX="20.0" layoutY="282.0" text="In progress">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="listorderPane" layoutX="70.0" layoutY="567.0" prefHeight="273.0" prefWidth="1109.0" stylesheets="@application.css">
+                           <children>
+                              <Label layoutX="20.0" layoutY="20.0" text="List of products in the order:" textFill="#00000080">
+                                 <font>
+                                    <Font name="Poppins Medium" size="20.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="tableOrdered" layoutX="20.0" layoutY="57.0" prefHeight="196.0" prefWidth="1057.0">
+                                 <columns>
+                                    <TableColumn fx:id="colProductNameOrdered" prefWidth="75.0" text="Product Name" />
+                                    <TableColumn fx:id="colProductDescriptionOrdered" prefWidth="75.0" text="Product Description" />
+                                    <TableColumn fx:id="colProductCategoryOrdered" prefWidth="75.0" text="Category" />
+                                    <TableColumn fx:id="colProductPriceOrdered" prefWidth="75.0" text="Price" />
+                                    <TableColumn fx:id="colListingDateOrdered" prefWidth="75.0" text="Date of Order" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
